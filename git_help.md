@@ -28,7 +28,8 @@ Fetch changes from the upstream repo:
 [Every time you start working make sure ur up to date with upstream repo. Checkout to master branch and run ]
 
 ```git
-git pull upstream master
+git fetch upstream
+git rebase upstream/master
 ```
 
 **Step 5:**
