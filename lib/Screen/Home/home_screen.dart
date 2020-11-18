@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
+import '../../Screen/NewPeriod/add_period_screen.dart';
 import 'package:womenism/Widget/homescreen/h_s_BarGraphTrack.dart';
-//import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -8,7 +8,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Predictions"),
-        actions: [IconButton(icon: Icon(Icons.add), onPressed: () {})],
+        actions: [
+          IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () {
+                Navigator.of(context).pushNamed(AddPeriodScreen.routeName);
+              })
+        ],
       ),
       body: Container(
         child: BarGraphTrack(),
