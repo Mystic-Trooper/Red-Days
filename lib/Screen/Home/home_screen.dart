@@ -1,13 +1,22 @@
 import "package:flutter/material.dart";
+import 'package:womenism/Constant/colors.dart';
+import 'package:womenism/Screen/Profile/profile_screen.dart';
 import '../../Screen/NewPeriod/add_period_screen.dart';
 import 'package:womenism/Widget/homescreen/h_s_BarGraphTrack.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  var selectedPageIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Predictions"),
+        elevation: 0,
+        backgroundColor: appBarColor,
         actions: [
           IconButton(
               icon: Icon(Icons.add),
@@ -16,11 +25,28 @@ class HomeScreen extends StatelessWidget {
               })
         ],
       ),
-      body: Container(
-        child: BarGraphTrack(),
-        height: 260,
-      ),
+      body: selectedPageIndex == 2
+          ? ProfileScreen()
+          : selectedPageIndex == 0
+              //ToDo: Add your scaffold screen here- Prediction
+              ? Container(
+                  child: BarGraphTrack(),
+                  height: 260,
+                )
+              : selectedPageIndex == 1
+                  //ToDo: Add your scaffold screen here- Recomendation
+                  ? Container(
+                      child: Center(child: Text("Recomendation")),
+                      height: 260,
+                    )
+                  : null,
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (index) {
+          setState(() {
+            selectedPageIndex = index;
+          });
+          print(index);
+        },
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.date_range),
