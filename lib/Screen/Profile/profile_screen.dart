@@ -13,7 +13,6 @@ class ProfileScreen extends StatelessWidget {
         backgroundColor: appBarColor,
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 10),
         child: Column(
           children: [
             PSPicNameListTile(),
