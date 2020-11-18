@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import '../../Screen/NewPeriod/add_period_screen.dart';
 //import "package:charts_flutter/flutter.dart";
 
 class HomeScreen extends StatelessWidget {
@@ -7,7 +8,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Predictions"),
-        actions: [IconButton(icon: Icon(Icons.add), onPressed: () {})],
+        actions: [
+          IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () {
+                Navigator.of(context).pushNamed(AddPeriodScreen.routeName);
+              })
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
