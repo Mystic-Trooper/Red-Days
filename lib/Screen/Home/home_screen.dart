@@ -10,9 +10,60 @@ class HomeScreen extends StatelessWidget {
         title: Text("Predictions"),
         actions: [IconButton(icon: Icon(Icons.add), onPressed: () {})],
       ),
-      body: Container(
-        child: BarGraphTrack(),
-        height: 260,
+      body: Column(
+        children: [
+          Container(
+            child: BarGraphTrack(),
+            height: 260,
+            margin: EdgeInsets.symmetric(horizontal: 10),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.blue.withOpacity(0.6),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      height: 200,
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Calculated \n Prediction',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 35,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.blue.withOpacity(0.6),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      height: 200,
+                      alignment: Alignment.center,
+                      child: Text(
+                        '03/19',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                        ),
+                      ),
+                    ),
+                  ),
+                ]),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
