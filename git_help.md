@@ -18,7 +18,7 @@ git clone "Forked Repo URL"
 Set main repo as upstream:
 
 ``` git
-git remote add upstream https://github.com/Mystic-Trooper/sacred-path.git
+git remote add upstream https://github.com/Mystic-Trooper/Womenism.git
 ```
 
 **Step 4:**
