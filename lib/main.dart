@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 import 'package:provider/provider.dart';
 import './main_properties/theme.dart';
 import './main_properties/provider_list.dart';
 import 'Screen/Home/home_screen.dart';
+
 import 'main_properties/routs.dart';
 
 void main() {
-   WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -22,9 +24,15 @@ class MyApp extends StatelessWidget {
 
         /// For debug purpose add your screen Widget here and define it in route table
         /// make sure to comment out your changes once you ready to send a PR.
-        home:
-            // if we are unable to log in then show authentication screen
-            HomeScreen(),
+        home: FutureBuilder(
+          builder: (context, snapshot) {
+            ScreenUtil.init(
+              context,
+            );
+            return HomeScreen();
+          },
+        ),
+        // if we are unable to log in then show authentication screen
 
         routes: routeTable,
       ),
