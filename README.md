@@ -17,7 +17,7 @@ The Boilerplate contains the minimal implementation required to create a basic f
 * Sign Up
 * Home Screen (Feed)
 * Profile (Manage Users Profile)
-* Category Screen
+
 
 ### Libraries & Tools Used
 
@@ -27,7 +27,7 @@ The Boilerplate contains the minimal implementation required to create a basic f
 Here is the core folder structure which flutter provides.
 
 ```git
-engrave/
+/
 |- android
 |- build
 |- ios
