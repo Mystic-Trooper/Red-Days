@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import '../../Screen/NewPeriod/add_period_screen.dart';
-//import "package:charts_flutter/flutter.dart";
+import 'package:womenism/Widget/homescreen/h_s_BarGraphTrack.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -15,6 +15,10 @@ class HomeScreen extends StatelessWidget {
                 Navigator.of(context).pushNamed(AddPeriodScreen.routeName);
               })
         ],
+      ),
+      body: Container(
+        child: BarGraphTrack(),
+        height: 260,
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
