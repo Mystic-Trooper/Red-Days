@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-//import "package:charts_flutter/flutter.dart";
+import 'package:womenism/Widget/homescreen/h_s_BarGraphTrack.dart';
+//import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -8,6 +9,10 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Predictions"),
         actions: [IconButton(icon: Icon(Icons.add), onPressed: () {})],
+      ),
+      body: Container(
+        child: BarGraphTrack(),
+        height: 260,
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
