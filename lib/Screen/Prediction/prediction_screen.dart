@@ -15,7 +15,10 @@ class PredictionScreen extends StatelessWidget {
               children: [
                 Text(
                   "Statistics",
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.blue[800],
+                  ),
                 ),
                 Container(
                   child: BarGraphTrack(),
@@ -27,7 +30,10 @@ class PredictionScreen extends StatelessWidget {
                 ),
                 Text(
                   "Expected ",
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.blue[800],
+                  ),
                 ),
                 SizedBox(height: 10),
                 ExpectedDate(),
@@ -51,10 +57,15 @@ class PredictionScreen extends StatelessWidget {
                         opacity: 0.5,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20.0),
-                          child: Image.asset(
-                            'assets/images/doctor-s-stethoscope.jpg',
-                            fit: BoxFit.fill,
-                          ),
+                          child: ColorFiltered(
+                              colorFilter: ColorFilter.mode(
+                                Colors.amber[400],
+                                BlendMode.saturation,
+                              ),
+                              child: Image.asset(
+                                'assets/images/doctor-s-stethoscope.jpg',
+                                fit: BoxFit.fill,
+                              )),
                         ),
                       ),
                     ],
