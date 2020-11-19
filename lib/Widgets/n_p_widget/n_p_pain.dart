@@ -4,7 +4,8 @@ const PainIntensity = ["High", "Moderate", "Low"];
 
 /// This is the stateful widget that the main application instantiates.
 class NPPain extends StatefulWidget {
-  NPPain({Key key}) : super(key: key);
+  final Function painCallback;
+  NPPain(this.painCallback);
 
   @override
   _NPPainState createState() => _NPPainState();
@@ -29,6 +30,7 @@ class _NPPainState extends State<NPPain> {
                   setState(() {
                     _character = value;
                   });
+                  widget.painCallback(0);
                   print(_character);
                 },
               ),
@@ -44,6 +46,7 @@ class _NPPainState extends State<NPPain> {
                   setState(() {
                     _character = value;
                   });
+                  widget.painCallback(1);
                   print(_character);
                 },
               ),
@@ -59,6 +62,7 @@ class _NPPainState extends State<NPPain> {
                   setState(() {
                     _character = value;
                   });
+                  widget.painCallback(2);
                   print(_character);
                 },
               ),

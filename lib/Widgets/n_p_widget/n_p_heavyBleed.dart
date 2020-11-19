@@ -4,7 +4,8 @@ const BleedingIntensity = ["Heavy", "Normal", "Low"];
 
 /// This is the stateful widget that the main application instantiates.
 class NPHeavyBleed extends StatefulWidget {
-  NPHeavyBleed({Key key}) : super(key: key);
+  final Function bloodCallback;
+  NPHeavyBleed(this.bloodCallback);
 
   @override
   _NPHeavyBleedState createState() => _NPHeavyBleedState();
@@ -29,6 +30,7 @@ class _NPHeavyBleedState extends State<NPHeavyBleed> {
                   setState(() {
                     _character = value;
                   });
+                  widget.bloodCallback(0);
                   print(_character);
                 },
               ),
@@ -44,6 +46,7 @@ class _NPHeavyBleedState extends State<NPHeavyBleed> {
                   setState(() {
                     _character = value;
                   });
+                  widget.bloodCallback(1);
                   print(_character);
                 },
               ),
@@ -59,6 +62,7 @@ class _NPHeavyBleedState extends State<NPHeavyBleed> {
                   setState(() {
                     _character = value;
                   });
+                  widget.bloodCallback(2);
                   print(_character);
                 },
               ),
