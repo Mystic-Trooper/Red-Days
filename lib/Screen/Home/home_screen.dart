@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:womenism/Constant/colors.dart';
+import 'package:womenism/Screen/Recomended/recomended_screen.dart';
 import '../../Screen/Prediction/prediction_screen.dart';
 import 'package:womenism/Screen/Profile/profile_screen.dart';
 import '../../Screen/NewPeriod/add_period_screen.dart';
@@ -14,34 +14,20 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: appBarColor,
-        actions: [
-          IconButton(
-              icon: Icon(Icons.add),
-              onPressed: () {
-                Navigator.of(context).pushNamed(AddPeriodScreen.routeName);
-              })
-        ],
-      ),
+      backgroundColor: Theme.of(context).backgroundColor,
       body: selectedPageIndex == 2
           ? ProfileScreen()
           : selectedPageIndex == 0
               ? PredictionScreen()
               : selectedPageIndex == 1
                   //ToDo: Add your scaffold screen here- Recomendation
-                  ? Container(
-                      child: Center(child: Text("Recomendation")),
-                      height: 260,
-                    )
+                  ? RecomendedScreen()
                   : null,
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
           setState(() {
             selectedPageIndex = index;
           });
-          print(index);
         },
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -57,6 +43,12 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Profile',
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add, color: Colors.black),
+        onPressed: () {
+          Navigator.of(context).pushNamed(AddPeriodScreen.routeName);
+        },
       ),
     );
   }
