@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class DetailScreen extends StatelessWidget {
   static const routeName = 'details';
@@ -6,19 +7,25 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(" SignUp"),
-        backgroundColor: Colors.blueGrey,
-      ),
-      body: SingleChildScrollView(
-        child: TextFormField(
-          decoration: InputDecoration(
-            labelText: 'Username',
-            prefixIcon: Icon(Icons.account_circle),
-          ),
-          // controller: usernameController,
+        appBar: AppBar(
+          title: Text(" Info"),
+          backgroundColor: Colors.indigo,
         ),
-      ),
-    );
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: 5,
+              ),
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Container(
+                  height: 150,
+                  child: SvgPicture.asset('assets/images/profilehh.svg'),
+                ),
+              )
+            ],
+          ),
+        ));
   }
 }

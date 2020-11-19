@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../Screen/Profile/modify_entries_screen.dart';
 import '../Screen/NewPeriod/add_period_screen.dart';
 import '../Screen/login/create.dart';
 import '../Screen/login/login.dart';
+import '../Screen/login/details.dart';
 import '../Screen/Home/home_screen.dart';
 
 Map<String, Widget Function(BuildContext)> routeTable = {
@@ -12,13 +12,13 @@ Map<String, Widget Function(BuildContext)> routeTable = {
   HomeScreen.routeName: (ctx) {
     return HomeScreen();
   },
+  DetailScreen.routeName: (ctx) {
+    return DetailScreen();
+  },
   CreateScreen.routeName: (ctx) {
     return CreateScreen();
   },
   AddPeriodScreen.routeName: (ctx) {
     return AddPeriodScreen();
-  },
-  ModifyScreen.routeName: (ctx) {
-    return ModifyScreen();
   },
 };
