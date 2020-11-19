@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:womenism/Screen/Profile/add_emergency_doctor.dart';
+import '../Screen/DoctorList/doctor_list_screen.dart';
+import '../Screen/Profile/add_emergency_doctor.dart';
 import '../Screen/Profile/modify_entries_screen.dart';
 import '../Screen/NewPeriod/add_period_screen.dart';
 import '../Screen/login/create.dart';
@@ -28,5 +29,8 @@ Map<String, Widget Function(BuildContext)> routeTable = {
   },
   AddEmergencyDoctor.routeName: (ctx) {
     return AddEmergencyDoctor();
+  },
+  DoctorListScreen.routeName: (ctx) {
+    return DoctorListScreen();
   },
 };

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:womenism/Screen/DoctorList/doctor_list_screen.dart';
 import '../../Widgets/predi_s_widget/predi_s_expectedDate.dart';
 import '../../Widgets/predi_s_widget/predi_s_BarGraphTrack.dart';
 import '../../Widgets/predi_s_widget/predi_s_analysis.dart';
@@ -61,6 +62,21 @@ class PredictionScreen extends StatelessWidget {
                 Container(
                   child: Stack(
                     children: [
+                      Opacity(
+                        opacity: 0.5,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
+                          child: ColorFiltered(
+                              colorFilter: ColorFilter.mode(
+                                Colors.amber[400],
+                                BlendMode.saturation,
+                              ),
+                              child: Image.asset(
+                                'assets/images/doctor-s-stethoscope.jpg',
+                                fit: BoxFit.fill,
+                              )),
+                        ),
+                      ),
                       Container(
                         height: 190,
                         alignment: Alignment.bottomRight,
@@ -79,23 +95,13 @@ class PredictionScreen extends StatelessWidget {
                                   fontWeight: FontWeight.w300),
                             ),
                             OutlineButton(
-                                child: Text('Consult Now'), onPressed: () {}),
+                              child: Text('Consult Now'),
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .pushNamed(DoctorListScreen.routeName);
+                              },
+                            ),
                           ],
-                        ),
-                      ),
-                      Opacity(
-                        opacity: 0.5,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20.0),
-                          child: ColorFiltered(
-                              colorFilter: ColorFilter.mode(
-                                Colors.amber[400],
-                                BlendMode.saturation,
-                              ),
-                              child: Image.asset(
-                                'assets/images/doctor-s-stethoscope.jpg',
-                                fit: BoxFit.fill,
-                              )),
                         ),
                       ),
                     ],
