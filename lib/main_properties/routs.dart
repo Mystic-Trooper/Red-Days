@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../Screen/Profile/modify_entries_screen.dart';
 import '../Screen/NewPeriod/add_period_screen.dart';
 import '../Screen/login/create.dart';
 import '../Screen/login/login.dart';
@@ -19,6 +20,9 @@ Map<String, Widget Function(BuildContext)> routeTable = {
     return CreateScreen();
   },
   AddPeriodScreen.routeName: (ctx) {
+    return AddPeriodScreen();
+  },
+  ModifyScreen.routeName: (ctx) {
     return AddPeriodScreen();
   },
 };
