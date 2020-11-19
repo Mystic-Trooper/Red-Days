@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const PainIntensity = ["Heavy", "Moderate", "Less"];
+const PainIntensity = ["High", "Moderate", "Low"];
 
 /// This is the stateful widget that the main application instantiates.
 class NPPain extends StatefulWidget {
@@ -21,7 +21,7 @@ class _NPPainState extends State<NPPain> {
         children: <Widget>[
           Row(
             children: [
-              const Text('Heavy'),
+              const Text('High'),
               Radio(
                 value: PainIntensity.elementAt(0),
                 groupValue: _character,
@@ -51,7 +51,7 @@ class _NPPainState extends State<NPPain> {
           ),
           Row(
             children: [
-              const Text('Less'),
+              const Text('Low'),
               Radio(
                 value: PainIntensity.elementAt(2),
                 groupValue: _character,
