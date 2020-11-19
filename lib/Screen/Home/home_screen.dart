@@ -5,6 +5,7 @@ import 'package:womenism/Screen/Profile/profile_screen.dart';
 import '../../Screen/NewPeriod/add_period_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const routeName = 'home-screen';
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
