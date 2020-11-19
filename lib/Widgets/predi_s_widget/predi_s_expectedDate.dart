@@ -72,14 +72,49 @@ class ExpectedDate extends StatelessWidget {
             ),
             height: 400.h,
             alignment: Alignment.center,
-            child: Text(
-              '03/19',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.w300,
-                color: Colors.blue[800],
-                fontSize: 40,
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  'Alert Date',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.blue[800],
+                    fontWeight: FontWeight.w300,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  '2020',
+                  //yr
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.blue[800],
+                    fontWeight: FontWeight.w300,
+                    fontSize: 25,
+                  ),
+                ),
+                Text(
+                  'March 19',
+                  //date
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.blue[800],
+                    fontWeight: FontWeight.w300,
+                    fontSize: 25,
+                  ),
+                ),
+                Text(
+                  'Friday',
+                  //day
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.blue[800],
+                    fontWeight: FontWeight.w300,
+                    fontSize: 25,
+                  ),
+                ),
+              ],
             ),
           ),
         ),
