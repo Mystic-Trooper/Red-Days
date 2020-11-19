@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Analysis extends StatelessWidget {
-  static final message = [
+  final message = [
     'Heavy bleeding from last 2 months',
     'Irregularities by 10 Days',
     'Everything is Going Well',
