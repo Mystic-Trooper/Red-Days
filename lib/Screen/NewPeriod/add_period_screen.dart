@@ -7,12 +7,36 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../Widgets/n_p_widget/n_p_heavyBleed.dart';
 import '../../Widgets/n_p_widget/n_p_pain.dart';
 
+// ignore: must_be_immutable
 class AddPeriodScreen extends StatelessWidget {
   static const routeName = "add-Period";
   final format = DateFormat("yyyy-MM-dd hh:mm a");
+  DateTime from;
+  DateTime to;
+  int painIndex = 0;
+  int bloodIndex = 0;
+
+  void painCallback(int _painIndex) {
+    painIndex = _painIndex;
+  }
+
+  void bloodCallback(int _bloodIndex) {
+    bloodIndex = _bloodIndex;
+  }
 
   void _saveForm(BuildContext context) async {
-    print("Form Save Pressed");
+    print(painIndex);
+    print(bloodIndex);
+    print(from);
+    print(to);
+    // Todo: Once login done just uncomment this
+    // Provider.of<PeriodProvider>(context).addPeriod(
+    //   blood: bloodIndex,
+    //   pain: painIndex,
+    //   from: from.toIso8601String(),
+    //   to: to.toIso8601String(),
+    // );
+    print("Requesting to add period ");
   }
 
   @override
@@ -55,10 +79,11 @@ class AddPeriodScreen extends StatelessWidget {
                         initialTime: TimeOfDay.fromDateTime(
                             currentValueCFrom ?? DateTime.now()),
                       );
-                      print(DateTimeField.combine(date, time));
+
+                      from = DateTimeField.combine(date, time);
                       return DateTimeField.combine(date, time);
                     } else {
-                      print(currentValueCFrom);
+                      from = currentValueCFrom;
                       return currentValueCFrom;
                     }
                   },
@@ -90,10 +115,11 @@ class AddPeriodScreen extends StatelessWidget {
                         initialTime: TimeOfDay.fromDateTime(
                             currentValueTTo ?? DateTime.now()),
                       );
-                      print(DateTimeField.combine(date, time));
+
+                      to = DateTimeField.combine(date, time);
                       return DateTimeField.combine(date, time);
                     } else {
-                      print(currentValueTTo);
+                      to = currentValueTTo;
                       return currentValueTTo;
                     }
                   },
@@ -101,9 +127,9 @@ class AddPeriodScreen extends StatelessWidget {
               ),
               SizedBox(height: 15),
               Title("Is it a heavy bleeding?", FlutterIcons.drop_ent),
-              NPHeavyBleed(),
+              NPHeavyBleed(bloodCallback),
               Title("How was the pain?", FlutterIcons.feather_alt_faw5s),
-              NPPain(),
+              NPPain(painCallback),
             ],
           ),
         ),
