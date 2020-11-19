@@ -23,6 +23,7 @@ class MainScreen extends StatelessWidget {
               Card(
                 child: Text(
                   "WELCOME TO THE Womenism!",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.deepOrangeAccent,
                     fontSize: 20,
