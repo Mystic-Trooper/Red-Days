@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../Home/home_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:womenism/provider/auth_provider.dart';
 
 class LoginScreen extends StatefulWidget {
   static const routeName = 'login-screen';
@@ -10,20 +11,22 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  // var _isLoading = false;
+  var _isLoading = false;
   final userController = TextEditingController();
 
   final passController = TextEditingController();
 
-  // void onSaved(BuildContext context) {
-  //   if (userController.text.isNotEmpty && passController.text.isNotEmpty) {
-  //     Provider.of<Auth>(context, listen: false).logIn(
-  //       email: userController.text,
-  //       password: passController.text,
-  //     );
-  //     print(userController.text);
-  //   } else {}
-  // }
+  void onSaved(BuildContext context) {
+    if (userController.text.isNotEmpty && passController.text.isNotEmpty) {
+      Provider.of<Auth>(context, listen: false).submitAuthForm(
+        ctx: context,
+        email: userController.text,
+        password: passController.text,
+        isLogin: true,
+      );
+      print(userController.text);
+    } else {}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,14 +74,17 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         controller: passController,
                       ),
-                      RaisedButton(
-                        onPressed: () {
-                          // onSaved(context);
-                          Navigator.of(context).pushNamed(HomeScreen.routeName);
-                        },
-                        child: Text('Login'),
-                        textColor: Colors.purple,
-                      ),
+                      _isLoading
+                          ? CircularProgressIndicator()
+                          : RaisedButton(
+                              onPressed: () {
+                                onSaved(context);
+                                // Navigator.of(context)
+                                //     .pushNamed(HomeScreen.routeName);
+                              },
+                              child: Text('Login'),
+                              textColor: Colors.purple,
+                            ),
                     ],
                   ),
                 ),

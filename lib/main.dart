@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:womenism/Screen/login/mainScreen.dart';
 import './main_properties/theme.dart';
 import './main_properties/provider_list.dart';
 import 'Screen/Home/home_screen.dart';
@@ -26,14 +28,28 @@ class MyApp extends StatelessWidget {
 
         /// For debug purpose add your screen Widget here and define it in route table
         /// make sure to comment out your changes once you ready to send a PR.
-        home: FutureBuilder(
+        home: StreamBuilder(
+          stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             ScreenUtil.init(
               context,
             );
-            return HomeScreen();
+            if (snapshot.hasData) {
+              return HomeScreen();
+            } else {
+              return MainScreen();
+            }
           },
         ),
+
+        //  FutureBuilder(
+        //   builder: (context, snapshot) {
+        //     ScreenUtil.init(
+        //       context,
+        //     );
+        //     return MainScreen();
+        //   },
+        // ),
         // if we are unable to log in then show authentication screen
 
         routes: routeTable,

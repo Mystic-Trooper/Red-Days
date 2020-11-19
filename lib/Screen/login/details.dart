@@ -2,20 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:intl/intl.dart';
-import '../Home/home_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:womenism/provider/auth_provider.dart';
 
+// ignore: must_be_immutable
 class DetailScreen extends StatelessWidget {
   static const routeName = 'details';
   final format = DateFormat("yyyy-MM-dd");
 
   final nameController = TextEditingController();
   final usernameController = TextEditingController();
-  final ageController = TextEditingController();
   final number = TextEditingController();
-  final dob = TextEditingController();
+  DateTime dob;
 
-  void _saveForm(BuildContext context) async {
-    print("Form Save Pressed");
+  void _saveForm(BuildContext context) {
+    print("tapped");
+
+    // nameController.text.isNotEmpty &&
+    //   usernameController.text.isNotEmpty &&
+    //   number.text.isNotEmpty &&
+    //   dob != null
+
+    print(nameController.text);
+    print(dob.toIso8601String());
+    print(usernameController.text);
+    print(int.parse(number.text));
+
+    Provider.of<Auth>(context, listen: false).inputUserDetails(
+      name: nameController.text ?? "Your Name",
+      userName: usernameController.text ?? "Username",
+      ctx: context,
+      dob: dob.toIso8601String() ?? DateTime.now(),
+      mob: int.parse(number.text) ?? 1234567890,
+    );
   }
 
   @override
@@ -79,18 +98,10 @@ class DetailScreen extends StatelessWidget {
                             initialDate: currentValueCFrom ?? DateTime.now(),
                             lastDate: DateTime.now(),
                           );
+                          dob = date;
+                          print(date);
                           return date;
                         }),
-                  ),
-                  Card(
-                    elevation: 3,
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        labelText: 'age',
-                      ),
-                      keyboardType: TextInputType.number,
-                      controller: ageController,
-                    ),
                   ),
                   Card(
                     elevation: 3,
@@ -120,7 +131,6 @@ class DetailScreen extends StatelessWidget {
         ),
         onPressed: () {
           _saveForm(context);
-          Navigator.of(context).pushNamed(HomeScreen.routeName);
         },
       ),
     );
