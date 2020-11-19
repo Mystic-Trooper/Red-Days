@@ -10,16 +10,16 @@ class ExpectedDate extends StatelessWidget {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.blue.withOpacity(0.6),
+              color: Colors.amber.withOpacity(0.6),
               borderRadius: BorderRadius.circular(20),
             ),
             height: 400.h,
             alignment: Alignment.center,
             child: Text(
-              'Next \n Cycle',
+              'Next\nCycle',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.blue[800],
                 fontWeight: FontWeight.w300,
                 fontSize: 35,
               ),
@@ -32,7 +32,7 @@ class ExpectedDate extends StatelessWidget {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.blue.withOpacity(0.6),
+              color: Colors.amber.withOpacity(0.6),
               borderRadius: BorderRadius.circular(20),
             ),
             height: 400.h,
@@ -42,7 +42,7 @@ class ExpectedDate extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.w300,
-                color: Colors.white,
+                color: Colors.blue[800],
                 fontSize: 40,
               ),
             ),
