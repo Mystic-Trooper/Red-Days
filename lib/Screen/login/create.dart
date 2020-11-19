@@ -43,7 +43,7 @@ class CreateScreen extends StatelessWidget {
                       children: <Widget>[
                         TextFormField(
                           decoration: InputDecoration(
-                            labelText: 'Username',
+                            labelText: 'Email',
                             prefixIcon: Icon(Icons.account_circle),
                           ),
                           keyboardType: TextInputType.emailAddress,
@@ -76,15 +76,13 @@ class CreateScreen extends StatelessWidget {
                                     Navigator.of(context)
                                         .pushNamed(DetailScreen.routeName);
                                   } else {
-                                    ScaffoldMessenger.of(context)
-                                        .showSnackBar(SnackBar(
+                                    Scaffold.of(context).showSnackBar(SnackBar(
                                       content: Text(
                                           'Confirmed Password is not matched!'),
                                     ));
                                   }
                                 } else {
-                                  ScaffoldMessenger.of(context)
-                                      .showSnackBar(SnackBar(
+                                  Scaffold.of(context).showSnackBar(SnackBar(
                                     content: Text('Username must be filled!'),
                                   ));
                                 }
