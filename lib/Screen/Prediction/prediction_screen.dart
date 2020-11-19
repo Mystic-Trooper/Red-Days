@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../Widgets/predi_s_widget/predi_s_expectedDate.dart';
 import '../../Widgets/predi_s_widget/predi_s_BarGraphTrack.dart';
+import '../../Widgets/predi_s_widget/predi_s_analysis.dart';
 
 class PredictionScreen extends StatelessWidget {
   @override
@@ -38,6 +39,10 @@ class PredictionScreen extends StatelessWidget {
                 SizedBox(height: 10),
                 ExpectedDate(),
                 SizedBox(height: 10),
+                Analysis(),
+                SizedBox(
+                  height: 10,
+                ),
                 Container(
                   child: Stack(
                     children: [
