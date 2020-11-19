@@ -87,7 +87,8 @@ class CreateScreen extends StatelessWidget {
                               onPressed: () {
                                 // if (sas == false) {
                                 if (confirmController.text ==
-                                    passwordController.text) {
+                                        passwordController.text &&
+                                    confirmController.text.isNotEmpty) {
                                   onSaved(context);
                                   Navigator.of(context)
                                       .pushNamed(DetailScreen.routeName);
