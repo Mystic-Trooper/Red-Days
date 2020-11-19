@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
 import 'package:womenism/Constant/colors.dart';
+import '../../Screen/Prediction/prediction_screen.dart';
 import 'package:womenism/Screen/Profile/profile_screen.dart';
 import '../../Screen/NewPeriod/add_period_screen.dart';
-import 'package:womenism/Widget/homescreen/h_s_BarGraphTrack.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -28,11 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: selectedPageIndex == 2
           ? ProfileScreen()
           : selectedPageIndex == 0
-              //ToDo: Add your scaffold screen here- Prediction
-              ? Container(
-                  child: BarGraphTrack(),
-                  height: 260,
-                )
+              ? PredictionScreen()
               : selectedPageIndex == 1
                   //ToDo: Add your scaffold screen here- Recomendation
                   ? Container(
