@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'login.dart';
+import 'create.dart';
 
 class MainScreen extends StatelessWidget {
   @override
@@ -54,8 +56,8 @@ class MainScreen extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          // Navigator.of(context)
-                          //     .pushNamed(LoginScreen.routeName);
+                          Navigator.of(context)
+                              .pushNamed(LoginScreen.routeName);
                         },
                       ),
                     ),
@@ -86,8 +88,8 @@ class MainScreen extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          // Navigator.of(context)
-                          //     .pushNamed(CreateScreen.routeName);
+                          Navigator.of(context)
+                              .pushNamed(CreateScreen.routeName);
                         },
                       ),
                     ),
