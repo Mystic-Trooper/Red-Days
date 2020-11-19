@@ -11,7 +11,7 @@ class CreateScreen extends StatelessWidget {
   final confirmController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final bool sas = usernameController.text.isEmpty;
+    // final bool sas = usernameController.text.isEmpty;
     return Scaffold(
         appBar: AppBar(
           title: Text(" SignUp"),
@@ -70,22 +70,24 @@ class CreateScreen extends StatelessWidget {
                             return RaisedButton(
                               color: Colors.red,
                               onPressed: () {
-                                if (sas != true) {
-                                  if (confirmController.text ==
-                                      passwordController.text) {
-                                    Navigator.of(context)
-                                        .pushNamed(DetailScreen.routeName);
-                                  } else {
-                                    Scaffold.of(context).showSnackBar(SnackBar(
+                                // if (sas == false) {
+                                if (confirmController.text ==
+                                    passwordController.text) {
+                                  Navigator.of(context)
+                                      .pushNamed(DetailScreen.routeName);
+                                  // } else {
+                                  Scaffold.of(context).showSnackBar(
+                                    SnackBar(
                                       content: Text(
                                           'Confirmed Password is not matched!'),
-                                    ));
-                                  }
-                                } else {
-                                  Scaffold.of(context).showSnackBar(SnackBar(
-                                    content: Text('Username must be filled!'),
-                                  ));
+                                    ),
+                                  );
                                 }
+                                // } else {
+                                //   Scaffold.of(context).showSnackBar(SnackBar(
+                                //     content: Text('Email must be filled!'),
+                                //   ));
+                                // }
                               },
                               child: Text('Signup'),
                               textColor: Colors.amber,
