@@ -1,7 +1,5 @@
-import 'package:womenism/provider/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 import '../Home/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -31,18 +29,6 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: <Widget>[
-          IconButton(
-            alignment: Alignment.center,
-            icon: Icon(
-              Icons.person,
-              color: Colors.lightBlue,
-            ),
-            onPressed: () {
-              // do something
-            },
-          )
-        ],
         title: Text("Login Screen"),
       ),
       body: SingleChildScrollView(
@@ -75,6 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           labelText: 'Email',
                           prefixIcon: Icon(Icons.account_circle),
                         ),
+                        autofocus: false,
                         keyboardType: TextInputType.emailAddress,
                         controller: userController,
                       ),
