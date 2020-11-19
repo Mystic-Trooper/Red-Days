@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
+import 'package:womenism/provider/auth_provider.dart';
 import './details.dart';
 import 'dart:core';
 // import 'package:email_validator/email_validator.dart';
@@ -9,6 +11,19 @@ class CreateScreen extends StatelessWidget {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmController = TextEditingController();
+
+  void onSaved(BuildContext context) {
+    if (usernameController.text.isNotEmpty &&
+        passwordController.text.isNotEmpty) {
+      Provider.of<Auth>(context, listen: false).submitAuthForm(
+        ctx: context,
+        email: usernameController.text,
+        password: passwordController.text,
+        isLogin: false,
+      );
+    } else {}
+  }
+
   @override
   Widget build(BuildContext context) {
     // final bool sas = usernameController.text.isEmpty;
@@ -73,9 +88,10 @@ class CreateScreen extends StatelessWidget {
                                 // if (sas == false) {
                                 if (confirmController.text ==
                                     passwordController.text) {
+                                  onSaved(context);
                                   Navigator.of(context)
                                       .pushNamed(DetailScreen.routeName);
-                                  // } else {
+                                } else {
                                   Scaffold.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text(
@@ -83,11 +99,6 @@ class CreateScreen extends StatelessWidget {
                                     ),
                                   );
                                 }
-                                // } else {
-                                //   Scaffold.of(context).showSnackBar(SnackBar(
-                                //     content: Text('Email must be filled!'),
-                                //   ));
-                                // }
                               },
                               child: Text('Signup'),
                               textColor: Colors.amber,
