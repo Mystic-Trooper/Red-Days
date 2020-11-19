@@ -1,71 +1,52 @@
 import "package:flutter/material.dart";
+import 'package:womenism/Constant/colors.dart';
+import 'package:womenism/Screen/Profile/profile_screen.dart';
+import '../../Screen/NewPeriod/add_period_screen.dart';
 import 'package:womenism/Widget/homescreen/h_s_BarGraphTrack.dart';
-//import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  var selectedPageIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Predictions"),
-        actions: [IconButton(icon: Icon(Icons.add), onPressed: () {})],
-      ),
-      body: Column(
-        children: [
-          Container(
-            child: BarGraphTrack(),
-            height: 260,
-            margin: EdgeInsets.symmetric(horizontal: 10),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 10),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.blue.withOpacity(0.6),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      height: 200,
-                      alignment: Alignment.center,
-                      child: Text(
-                        'Calculated \n Prediction',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 35,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.blue.withOpacity(0.6),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      height: 200,
-                      alignment: Alignment.center,
-                      child: Text(
-                        '03/19',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                        ),
-                      ),
-                    ),
-                  ),
-                ]),
-          ),
+        elevation: 0,
+        backgroundColor: appBarColor,
+        actions: [
+          IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () {
+                Navigator.of(context).pushNamed(AddPeriodScreen.routeName);
+              })
         ],
       ),
+      body: selectedPageIndex == 2
+          ? ProfileScreen()
+          : selectedPageIndex == 0
+              //ToDo: Add your scaffold screen here- Prediction
+              ? Container(
+                  child: BarGraphTrack(),
+                  height: 260,
+                )
+              : selectedPageIndex == 1
+                  //ToDo: Add your scaffold screen here- Recomendation
+                  ? Container(
+                      child: Center(child: Text("Recomendation")),
+                      height: 260,
+                    )
+                  : null,
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (index) {
+          setState(() {
+            selectedPageIndex = index;
+          });
+          print(index);
+        },
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.date_range),
