@@ -34,14 +34,12 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
-                height: 250,
-                child: SvgPicture.asset(
-                  'assets/images/my_password_d6kg.svg',
-                  fit: BoxFit.cover,
-                ),
+            SizedBox(height: 10),
+            Container(
+              height: 300,
+              child: SvgPicture.asset(
+                'assets/images/my_password_d6kg.svg',
+                fit: BoxFit.cover,
               ),
             ),
             Container(
