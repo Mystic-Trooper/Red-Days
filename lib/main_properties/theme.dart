@@ -5,7 +5,9 @@ ThemeData theme = ThemeData(
   backgroundColor: Colors.white.withOpacity(0.97),
   scaffoldBackgroundColor: Colors.white.withOpacity(0.97),
   appBarTheme: AppBarTheme(iconTheme: IconThemeData(color: Colors.black)),
-  primarySwatch: Colors.blue,
+  primarySwatch: Colors.purple,
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+      elevation: 8, backgroundColor: Colors.white),
   errorColor: Colors.red,
   visualDensity: VisualDensity.adaptivePlatformDensity,
   buttonTheme: ButtonThemeData(
