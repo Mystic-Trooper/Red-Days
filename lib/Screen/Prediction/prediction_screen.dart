@@ -39,6 +39,23 @@ class PredictionScreen extends StatelessWidget {
                 SizedBox(height: 10),
                 ExpectedDate(),
                 SizedBox(height: 10),
+                Container(
+                  width: double.infinity,
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  height: 40,
+                  child: RaisedButton(
+                    child: Text(
+                      'TAP TO SEND SOS',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    ),
+                    onPressed: () {},
+                    color: Colors.redAccent[100],
+                  ),
+                ),
+                SizedBox(height: 10),
                 Analysis(),
                 SizedBox(height: 10),
                 Container(
