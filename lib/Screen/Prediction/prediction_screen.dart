@@ -40,22 +40,30 @@ class PredictionScreen extends StatelessWidget {
                 ExpectedDate(),
                 SizedBox(height: 10),
                 Analysis(),
-                SizedBox(
-                  height: 10,
-                ),
+                SizedBox(height: 10),
                 Container(
                   child: Stack(
                     children: [
                       Container(
                         height: 190,
                         alignment: Alignment.bottomRight,
-                        child: Text(
-                          'No need to\t \n Consult a\t \n Doctor\t',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.blue[600],
-                              fontSize: 30,
-                              fontWeight: FontWeight.w300),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 15),
+                            //('condition')? Widget1(...): Widget2(...)
+                            Text(
+                              (false)
+                                  ? 'No need to\t \n Consult a\t \n Doctor\t'
+                                  : 'Advised to\t \n Consult\t \n a Doctor\t',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.blue[600],
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w300),
+                            ),
+                            OutlineButton(
+                                child: Text('Consult Now'), onPressed: () {}),
+                          ],
                         ),
                       ),
                       Opacity(
