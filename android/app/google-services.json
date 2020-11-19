@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "462223785733",
+    "firebase_url": "https://womenism-559b9.firebaseio.com",
+    "project_id": "womenism-559b9",
+    "storage_bucket": "womenism-559b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462223785733:android:c0f7f43b721e673887416c",
+        "android_client_info": {
+          "package_name": "com.example.womenism"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462223785733-eb7tnmr5ninn4m2m1b9nl1n9ohfvhfap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzEPYYJQOIR6CpWoa87FzcUbmQk0jSfOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462223785733-eb7tnmr5ninn4m2m1b9nl1n9ohfvhfap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
