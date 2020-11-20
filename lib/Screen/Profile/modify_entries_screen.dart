@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:womenism/provider/period_provider.dart';
+import 'package:intl/intl.dart';
 
 class ModifyScreen extends StatelessWidget {
   static const routeName = 'modify-screen';
@@ -25,7 +26,7 @@ class ModifyScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       title: Text(
-                          "${snapshot.data[index].from}- ${snapshot.data[index].to}"),
+                          "${DateFormat('yyyy-MM-dd EE').format(snapshot.data[index]?.from ?? DateTime.now())} to ${DateFormat('yyyy-MM-dd EE').format(snapshot.data[index]?.to ?? DateTime.now())}"),
                       subtitle: Row(
                         children: [
                           Text(
