@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'login.dart';
 import 'create.dart';
 
@@ -34,7 +35,7 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 300,
+                height: 0.4.sh,
                 child: SvgPicture.asset('assets/images/medical_care_movn.svg'),
               ),
               Container(

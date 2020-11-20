@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ModifyScreen extends StatelessWidget {
   static const routeName = 'modify-screen';
@@ -19,7 +20,7 @@ class ModifyScreen extends StatelessWidget {
                     subtitle: Row(
                       children: [
                         Text("Pain: More"),
-                        SizedBox(width: 10),
+                        SizedBox(width: 0.01.sw),
                         Text("Bleeding: Heavy"),
                       ],
                     ),

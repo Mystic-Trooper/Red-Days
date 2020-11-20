@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RecomendedScreen extends StatelessWidget {
   @override
@@ -33,10 +34,10 @@ class RecomendedScreen extends StatelessWidget {
                       Center(
                         child: SvgPicture.asset(
                           "assets/images/choice.svg",
-                          height: 100,
+                          height: 0.15.sh,
                         ),
                       ),
-                      SizedBox(height: 7),
+                      SizedBox(height: 0.01.sh),
                       Container(
                         padding:
                             EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -59,14 +60,14 @@ class RecomendedScreen extends StatelessWidget {
                               ),
                               overflow: TextOverflow.clip,
                             ),
-                            SizedBox(height: 7),
+                            SizedBox(height: 0.01.sh),
                             Text(
                               "This is description of the blog" * 10,
                               maxLines: 3,
                               style: TextStyle(fontSize: 14),
                               overflow: TextOverflow.ellipsis,
                             ),
-                            SizedBox(height: 7),
+                            SizedBox(height: 0.01.sh),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -76,7 +77,7 @@ class RecomendedScreen extends StatelessWidget {
                                     FlutterIcons.youtube_ant,
                                   ),
                                 ),
-                                SizedBox(width: 12),
+                                SizedBox(width: 0.01.sh),
                               ],
                             ),
                           ],

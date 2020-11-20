@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:womenism/provider/auth_provider.dart';
@@ -48,17 +49,17 @@ class DetailScreen extends StatelessWidget {
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: 5,
+              height: 0.005.sh,
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Container(
-                height: 150,
+                height: 0.2.sh,
                 child: SvgPicture.asset('assets/images/profilehh.svg'),
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 0.01.sh,
             ),
             Container(
               margin: EdgeInsets.all(10),

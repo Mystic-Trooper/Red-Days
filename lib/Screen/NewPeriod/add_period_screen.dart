@@ -57,7 +57,7 @@ class AddPeriodScreen extends StatelessWidget {
             children: [
               Title("Last Time When you got cycle?",
                   FlutterIcons.calendar_alt_faw5),
-              SizedBox(height: 10),
+              SizedBox(height: 0.01.sh),
               Container(
                 width: 0.95.sw,
                 child: DateTimeField(
@@ -93,7 +93,7 @@ class AddPeriodScreen extends StatelessWidget {
                   },
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 0.01.sh),
               Container(
                 width: 0.95.sw,
                 child: DateTimeField(
@@ -129,7 +129,7 @@ class AddPeriodScreen extends StatelessWidget {
                   },
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 0.02.sh),
               Title("Is it a heavy bleeding?", FlutterIcons.drop_ent),
               NPHeavyBleed(bloodCallback),
               Title("How was the pain?", FlutterIcons.feather_alt_faw5s),
@@ -167,7 +167,7 @@ class Title extends StatelessWidget {
     return Row(
       children: [
         Icon(icon),
-        SizedBox(width: 10),
+        SizedBox(width: 0.01.sw),
         Text(
           title,
           style: TextStyle(

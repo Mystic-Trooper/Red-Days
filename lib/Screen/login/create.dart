@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:womenism/provider/auth_provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './details.dart';
 import 'dart:core';
 // import 'package:email_validator/email_validator.dart';
@@ -39,7 +40,7 @@ class CreateScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
-                  height: 250,
+                  height: 0.35.sh,
                   child: SvgPicture.asset(
                     'assets/images/medicine_b1ol.svg',
                     fit: BoxFit.cover,

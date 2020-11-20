@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:womenism/provider/auth_provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
   static const routeName = 'login-screen';
@@ -37,9 +38,9 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 10),
+            SizedBox(height: 0.01.sh),
             Container(
-              height: 300,
+              height: 0.36.sh,
               child: SvgPicture.asset(
                 'assets/images/my_password_d6kg.svg',
                 fit: BoxFit.cover,

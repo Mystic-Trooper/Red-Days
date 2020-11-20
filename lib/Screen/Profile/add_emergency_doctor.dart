@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:womenism/provider/emergency_doctor_provider.dart';
 
 // ignore: must_be_immutable
@@ -54,7 +55,7 @@ class AddEmergencyDoctor extends StatelessWidget {
                             size: 30,
                           ),
                           SizedBox(
-                            width: 15,
+                            width: 0.03.sw,
                           ),
                           Expanded(
                             child: TextFormField(
@@ -90,7 +91,7 @@ class AddEmergencyDoctor extends StatelessWidget {
                             size: 30,
                           ),
                           SizedBox(
-                            width: 15,
+                            width: 0.03.sw,
                           ),
                           Expanded(
                             child: TextFormField(
@@ -126,7 +127,7 @@ class AddEmergencyDoctor extends StatelessWidget {
                             size: 30,
                           ),
                           SizedBox(
-                            width: 15,
+                            width: 0.03.sh,
                           ),
                           Expanded(
                             child: TextFormField(

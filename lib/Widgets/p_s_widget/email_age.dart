@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PSEmailPhoneCard extends StatelessWidget {
   @override
@@ -18,19 +19,19 @@ class PSEmailPhoneCard extends StatelessWidget {
                 children: [
                   Icon(Icons.email),
                   SizedBox(
-                    width: 10,
+                    width: 0.025.sw,
                   ),
                   Text("aishwarya324@gmail.com")
                 ],
               ),
               SizedBox(
-                height: 2,
+                height: 0.005.sh,
               ),
               Row(
                 children: [
                   Icon(FlutterIcons.date_range_mdi),
                   SizedBox(
-                    width: 10,
+                    width: 0.025.sw,
                   ),
                   Text("32 Yrs old"),
                 ],
