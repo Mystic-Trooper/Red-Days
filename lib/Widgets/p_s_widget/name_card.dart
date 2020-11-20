@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:womenism/model/profile.dart';
 
 class PSPicNameListTile extends StatelessWidget {
+  final Profile profileDetails;
+
+  PSPicNameListTile(this.profileDetails);
+
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -16,13 +21,13 @@ class PSPicNameListTile extends StatelessWidget {
         ),
       ),
       title: Text(
-        "Aishwarya Mohanraj",
+        profileDetails?.name ?? "Your name",
         style: TextStyle(
           fontSize: 20,
         ),
       ),
       subtitle: Text(
-        "aish12dc",
+        profileDetails?.userName ?? "username",
       ),
     );
   }

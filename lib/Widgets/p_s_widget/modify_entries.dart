@@ -12,7 +12,7 @@ class ModifyEntries extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(
-            "Last Updated 34 days before",
+            "Updated Period Details",
             style: TextStyle(fontSize: 18),
           ),
           OutlineButton(

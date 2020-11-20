@@ -25,7 +25,7 @@ Map<String, Widget Function(BuildContext)> routeTable = {
     return AddPeriodScreen();
   },
   ModifyScreen.routeName: (ctx) {
-    return AddPeriodScreen();
+    return ModifyScreen();
   },
   AddEmergencyDoctor.routeName: (ctx) {
     return AddEmergencyDoctor();

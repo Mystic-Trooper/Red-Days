@@ -12,36 +12,41 @@ import '../../Widgets/p_s_widget/name_card.dart';
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        actions: [
-          IconButton(
-              icon: Icon(Icons.accessibility_sharp),
-              onPressed: () {
-                Provider.of<ProfileProvider>(context, listen: false)
-                    .getProfile();
-              }),
-          IconButton(
-              icon: Icon(FlutterIcons.sign_out_alt_faw5s),
-              onPressed: () {
-                FirebaseAuth.instance.signOut();
-              })
-        ],
-        backgroundColor: appBarColor,
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            PSPicNameListTile(),
-            SizedBox(height: 10),
-            PSEmailPhoneCard(),
-            SizedBox(height: 20),
-            ModifyEntries(),
-            SizedBox(height: 20),
-            EmergencyDocCard()
+    return FutureBuilder(
+      future: Provider.of<ProfileProvider>(context).getProfile(),
+      builder: (context, snapshot) => Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          actions: [
+            IconButton(
+                icon: Icon(Icons.accessibility_sharp),
+                onPressed: () {
+                  Provider.of<ProfileProvider>(context, listen: false)
+                      .getProfile();
+                }),
+            IconButton(
+                icon: Icon(FlutterIcons.sign_out_alt_faw5s),
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                })
           ],
+          backgroundColor: appBarColor,
         ),
+        body: snapshot?.data == null
+            ? Center(child: CircularProgressIndicator())
+            : SingleChildScrollView(
+                child: Column(
+                  children: [
+                    PSPicNameListTile(snapshot.data),
+                    SizedBox(height: 10),
+                    PSEmailPhoneCard(snapshot.data),
+                    SizedBox(height: 20),
+                    ModifyEntries(),
+                    SizedBox(height: 20),
+                    EmergencyDocCard()
+                  ],
+                ),
+              ),
       ),
     );
   }
