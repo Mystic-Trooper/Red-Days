@@ -6,20 +6,6 @@ import '../../Widgets/predi_s_widget/predi_s_analysis.dart';
 //import 'package:flutter_sms/flutter_sms.dart';
 
 class PredictionScreen extends StatelessWidget {
-/*
-  void sendSMS(String message, List<String> recipents) async
-{
-  String result = await sendSMS(message: message ,
-   recipents: recipents,)
-    .catchError((onError) {
-      print(onError);
-      }
-    );
-  print(result);
-}*/
-  final String message = "Emergency..!";
-  final List<String> recipents = ["1234567898", "9410234020"];
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -61,14 +47,14 @@ class PredictionScreen extends StatelessWidget {
                   height: 40,
                   child: RaisedButton(
                     child: Text(
-                      'TAP TO SEND SOS',
+                      'LONG PRESS TO SEND SOS',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
                       ),
                     ),
-                    onPressed: () {
-                      sendSOSMessage(message, recipents);
+                    onLongPress: () {
+                      sosDoc();
                     },
                     color: Colors.redAccent[100],
                   ),
