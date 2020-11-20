@@ -22,7 +22,7 @@ class ProfileScreen extends StatelessWidget {
         ],
         backgroundColor: appBarColor,
       ),
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             PSPicNameListTile(),
