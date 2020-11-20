@@ -46,6 +46,10 @@ class PredictionScreen extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 10),
                   height: 40,
                   child: RaisedButton(
+                    onPressed: () {},
+                    onLongPress: () {
+                      sosDoc();
+                    },
                     child: Text(
                       'LONG PRESS TO SEND SOS',
                       style: TextStyle(
@@ -53,9 +57,6 @@ class PredictionScreen extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    onLongPress: () {
-                      sosDoc();
-                    },
                     color: Colors.redAccent[100],
                   ),
                 ),
