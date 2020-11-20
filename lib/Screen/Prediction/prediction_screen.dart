@@ -48,7 +48,7 @@ class PredictionScreen extends StatelessWidget {
                   child: RaisedButton(
                     onPressed: () {},
                     onLongPress: () {
-                      sosDoc();
+                      sosDoc(context);
                     },
                     child: Text(
                       'LONG PRESS TO SEND SOS',
