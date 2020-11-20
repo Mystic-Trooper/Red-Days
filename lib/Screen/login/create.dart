@@ -21,6 +21,7 @@ class CreateScreen extends StatelessWidget {
         password: passwordController.text,
         isLogin: false,
       );
+      Navigator.of(context).pushNamed(DetailScreen.routeName);
     } else {}
   }
 
@@ -90,8 +91,6 @@ class CreateScreen extends StatelessWidget {
                                         passwordController.text &&
                                     confirmController.text.isNotEmpty) {
                                   onSaved(context);
-                                  Navigator.of(context)
-                                      .pushNamed(DetailScreen.routeName);
                                 } else {
                                   Scaffold.of(context).showSnackBar(
                                     SnackBar(
