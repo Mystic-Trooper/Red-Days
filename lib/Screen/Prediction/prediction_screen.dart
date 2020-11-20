@@ -3,6 +3,7 @@ import 'package:womenism/Screen/DoctorList/doctor_list_screen.dart';
 import '../../Widgets/predi_s_widget/predi_s_expectedDate.dart';
 import '../../Widgets/predi_s_widget/predi_s_BarGraphTrack.dart';
 import '../../Widgets/predi_s_widget/predi_s_analysis.dart';
+import '../../provider/sos_message_provider.dart';
 
 class PredictionScreen extends StatelessWidget {
   @override
@@ -45,14 +46,17 @@ class PredictionScreen extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 10),
                   height: 40,
                   child: RaisedButton(
+                    onPressed: () {},
+                    onLongPress: () {
+                      sosDoc();
+                    },
                     child: Text(
-                      'TAP TO SEND SOS',
+                      'LONG PRESS TO SEND SOS',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
                       ),
                     ),
-                    onPressed: () {},
                     color: Colors.redAccent[100],
                   ),
                 ),
