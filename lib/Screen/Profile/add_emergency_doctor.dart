@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:womenism/provider/emergency_doctor_provider.dart';
 
 // ignore: must_be_immutable
 class AddEmergencyDoctor extends StatelessWidget {
@@ -17,19 +19,12 @@ class AddEmergencyDoctor extends StatelessWidget {
       print(name);
       print(phone);
       print(mail);
-      // if (isPatient) {
-      //   await Provider.of<PatientProfileProvider>(context, listen: false)
-      //       .saveEditedUser(editedUser)
-      //       .then((value) {});
-      // } else {
-      //   await Provider.of<DoctorsProvider>(context, listen: false)
-      //       .saveEditedUser(editedUser)
-      //       .then((value) {});
-      // }
-      // if (image != null) {
-      //   await Provider.of<FirestoreImageUpload>(context, listen: false)
-      //       .uploadProfileImage(image, context);
-      // }
+      Provider.of<EmergencyDoctorProvider>(context, listen: false).addDoc(
+        ctx: context,
+        mail: mail,
+        mob: phone,
+        name: name,
+      );
       Navigator.of(context).pop();
     }
   }

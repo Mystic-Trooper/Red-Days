@@ -1,9 +1,11 @@
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:provider/provider.dart';
 import 'package:womenism/Constant/colors.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:womenism/provider/period_provider.dart';
 import '../../Widgets/n_p_widget/n_p_heavyBleed.dart';
 import '../../Widgets/n_p_widget/n_p_pain.dart';
 
@@ -29,14 +31,16 @@ class AddPeriodScreen extends StatelessWidget {
     print(bloodIndex);
     print(from);
     print(to);
-    // Todo: Once login done just uncomment this
-    // Provider.of<PeriodProvider>(context).addPeriod(
-    //   blood: bloodIndex,
-    //   pain: painIndex,
-    //   from: from.toIso8601String(),
-    //   to: to.toIso8601String(),
-    // );
-    print("Requesting to add period ");
+    if (from != null && to != null) {
+      Provider.of<PeriodProvider>(context, listen: false).addPeriod(
+        blood: bloodIndex,
+        pain: painIndex,
+        from: from?.toIso8601String(),
+        to: to?.toIso8601String(),
+      );
+      print("Requesting to add period ");
+      Navigator.of(context).pop();
+    }
   }
 
   @override
@@ -69,7 +73,7 @@ class AddPeriodScreen extends StatelessWidget {
                     currentValueCFrom = DateTime.now();
                     final date = await showDatePicker(
                       context: context,
-                      firstDate: DateTime.now(),
+                      firstDate: DateTime(2000),
                       initialDate: currentValueCFrom ?? DateTime.now(),
                       lastDate: DateTime(2025),
                     );
