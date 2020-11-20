@@ -37,14 +37,6 @@ class PSEmailPhoneCard extends StatelessWidget {
               ),
             ],
           ),
-          OutlineButton.icon(
-            icon: Icon(Icons.edit),
-            label: Text("Edit"),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            onPressed: () {},
-          )
         ],
       ),
     );
