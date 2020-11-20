@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:womenism/Screen/DoctorList/doctor_list_screen.dart';
 import '../../Widgets/predi_s_widget/predi_s_expectedDate.dart';
 import '../../Widgets/predi_s_widget/predi_s_BarGraphTrack.dart';
@@ -25,11 +26,11 @@ class PredictionScreen extends StatelessWidget {
                 ),
                 Container(
                   child: BarGraphTrack(),
-                  height: 260,
+                  height: 0.35.sh,
                   margin: EdgeInsets.symmetric(horizontal: 10),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 0.01.sh,
                 ),
                 Text(
                   "Expected ",
@@ -38,13 +39,13 @@ class PredictionScreen extends StatelessWidget {
                     color: Colors.blue[800],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 0.01.sh),
                 ExpectedDate(),
-                SizedBox(height: 10),
+                SizedBox(height: 0.01.sh),
                 Container(
                   width: double.infinity,
                   margin: EdgeInsets.symmetric(horizontal: 10),
-                  height: 40,
+                  height: 0.05.sh,
                   child: RaisedButton(
                     onPressed: () {},
                     onLongPress: () {
@@ -60,9 +61,9 @@ class PredictionScreen extends StatelessWidget {
                     color: Colors.redAccent[100],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 0.01.sh),
                 Analysis(),
-                SizedBox(height: 10),
+                SizedBox(height: 0.01.sh),
                 Container(
                   child: Stack(
                     children: [
@@ -82,11 +83,11 @@ class PredictionScreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        height: 190,
+                        height: 0.3.sh,
                         alignment: Alignment.bottomRight,
                         child: Column(
                           children: [
-                            SizedBox(height: 15),
+                            SizedBox(height: 0.03.sh),
                             //('condition')? Widget1(...): Widget2(...)
                             Text(
                               (false)
@@ -110,7 +111,7 @@ class PredictionScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  height: 260,
+                  height: 0.4.sh,
                   margin: EdgeInsets.symmetric(horizontal: 10),
                 ),
               ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Analysis extends StatelessWidget {
   final message = [
@@ -14,7 +15,7 @@ class Analysis extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.blueAccent[100].withOpacity(0.4),
           borderRadius: BorderRadius.all(Radius.circular(20))),
-      height: 80,
+      height: 0.1.sh,
       alignment: Alignment.center,
       child: Text(
         message[2],
