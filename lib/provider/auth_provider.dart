@@ -13,12 +13,14 @@ class Auth with ChangeNotifier {
       String userName,
       String dob,
       int mob,
+      String uid,
       BuildContext ctx}) async {
+    final currentUser = FirebaseAuth.instance.currentUser;
     try {
       await FirebaseFirestore.instance
           .collection('users')
           .doc(currentUser.uid)
-          .set({
+          .update({
         'name': name,
         'username': userName,
         'dob': dob,
@@ -88,5 +90,6 @@ class Auth with ChangeNotifier {
       print("Error in auth provider");
       print(error);
     }
+    notifyListeners();
   }
 }
