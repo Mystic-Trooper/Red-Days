@@ -39,6 +39,7 @@ class PeriodProvider with ChangeNotifier {
           .collection('users')
           .doc(user.uid)
           .collection("Period")
+          .orderBy('from')
           .get();
       querrySnapshot.docs.forEach((element) {
         //element.data();
