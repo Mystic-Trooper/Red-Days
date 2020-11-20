@@ -26,6 +26,7 @@ class Auth with ChangeNotifier {
       });
       Navigator.of(ctx).pop();
       Navigator.of(ctx).pop();
+      print("User Details Created Sucessfully");
     } on PlatformException catch (error) {
       var message = "An error occured, Please check your credientials!";
       if (error.message != null) {
@@ -55,6 +56,7 @@ class Auth with ChangeNotifier {
         authResult = await _auth.signInWithEmailAndPassword(
             email: email, password: password);
         Navigator.of(ctx).pop();
+        print("Login Succesfull");
       } else {
         authResult = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
@@ -69,6 +71,7 @@ class Auth with ChangeNotifier {
           'username': userName,
           'email': email,
         });
+        print("SignUp  Succesfull");
       }
     } on PlatformException catch (error) {
       var message = "An error occured, Please check your credientials!";
