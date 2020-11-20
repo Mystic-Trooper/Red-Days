@@ -1,10 +1,55 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../Constant/blogDetail.dart';
 
 class RecomendedScreen extends StatelessWidget {
+  void bleeding(String bleedingIntensity, String pain) {
+    var i = 0;
+    print(blogDetail[i]['description']);
+    if (bleedingIntensity == 'Normal') {
+      i = 0;
+      while (i < blogDetail.length) {
+        if ((blogDetail[i]['isMenorrhagia'] == 'false') &&
+            blogDetail[i]['disease'] == 'null') {
+          print(blogDetail[i]['description']);
+        }
+        i = i + 1;
+      }
+    } else if (bleedingIntensity == 'low') {
+      i = 0;
+      while (i < blogDetail.length) {
+        if ((blogDetail[i]['isMenorrhagia'] == 'false') &&
+            blogDetail[i]['disease'] == 'hypomenorrhea') {
+          print(blogDetail[i]['description']);
+        }
+        i = i + 1;
+      }
+    } else if (bleedingIntensity == 'high') {
+      i = 0;
+      while (i < blogDetail.length) {
+        if ((blogDetail[i]['isMenorrhagia'] == 'true')) {
+          print(blogDetail[i]['description']);
+        }
+        i = i + 1;
+      }
+    }
+    if (pain == 'high') {
+      i = 0;
+      while (i < blogDetail.length) {
+        if ((blogDetail[i]['disease'] == 'dysmenorrhea') ||
+            (blogDetail[i]['disease'] == 'Anemia')) {
+          print(blogDetail[i]['description']);
+        }
+        i = i + 1;
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    bleeding('high', 'high');
+    print('recommend');
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: Container(

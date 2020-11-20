@@ -5,7 +5,7 @@ var blogDetail = [
         'https://i.pinimg.com/736x/56/58/eb/5658ebd81676b99acd753488dcadd054.jpg',
     'YoutubeUrl': 'https://www.youtube.com/watch?v=MYZECLO6yos',
     'isAgeBelow': 19,
-    'Disease': 'null',
+    'disease': 'null',
     'isMenorrhagia': 'false',
     'title': 'two periods in a month',
     'description':
