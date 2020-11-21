@@ -54,7 +54,7 @@ class DetailScreen extends StatelessWidget {
               padding: EdgeInsets.all(10.0),
               child: Container(
                 height: 150,
-                child: SvgPicture.asset('assets/images/profilehh.svg'),
+                child: SvgPicture.asset('assets/images/4.svg'),
               ),
             ),
             SizedBox(
