@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:womenism/model/period.dart';
 
 class PeriodProvider with ChangeNotifier {
+  List<Period> periodListFetchedAlredy;
   void addPeriod(
       {BuildContext ctx, String from, String to, int pain, int blood}) async {
     try {
@@ -52,11 +53,15 @@ class PeriodProvider with ChangeNotifier {
         );
         periodList.add(eachPeriod);
       });
-
+      periodListFetchedAlredy = periodList;
       return periodList;
       //print(fetchDoctor);
     } catch (err) {
       print(err);
     }
+  }
+
+  List<Period> periodListProvideFromAlredyFetched() {
+    return periodListFetchedAlredy;
   }
 }

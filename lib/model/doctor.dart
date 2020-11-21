@@ -1,11 +1,15 @@
+import 'package:flutter/cupertino.dart';
+
 class Doctor {
   String name;
   String location;
+  int phone;
   bool isAvailable;
 
   Doctor({
-    this.name,
-    this.location,
-    this.isAvailable,
+    @required this.name,
+    @required this.location,
+    @required this.phone,
+    @required this.isAvailable,
   });
 }
