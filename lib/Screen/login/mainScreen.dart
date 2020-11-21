@@ -24,7 +24,7 @@ class MainScreen extends StatelessWidget {
             children: [
               Card(
                 child: Text(
-                  "RED DAYS \n  TRACKING THOSE DAYS MADE EASY",
+                  "RED DAYS : \n  TRACKING THOSE DAYS MADE EASY",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.deepOrangeAccent,
