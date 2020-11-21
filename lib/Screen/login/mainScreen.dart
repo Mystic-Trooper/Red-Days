@@ -24,11 +24,25 @@ class MainScreen extends StatelessWidget {
             children: [
               Card(
                 child: Text(
-                  "WELCOME TO THE Womenism!",
+                  "RED  DAYS",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.deepOrangeAccent,
+                    fontSize: 40,
+                    fontWeight: FontWeight.w600,
+                    wordSpacing: 3,
+                  ),
+                ),
+              ),
+              SizedBox(height: 5),
+              Card(
+                child: Text(
+                  "Tracking those days made easy",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.amber,
                     fontSize: 20,
+                    wordSpacing: 3,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
