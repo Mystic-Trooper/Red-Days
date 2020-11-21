@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:provider/provider.dart';
+import 'package:womenism/provider/period_provider.dart';
 import '../../Constant/blogDetail.dart';
 import '../../model/blog.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -29,7 +31,7 @@ class RecomendedScreen extends StatelessWidget {
         }
         i = i + 1;
       }
-    } else if (bleedingIntensity == 'low') {
+    } else if (bleedingIntensity.contains('low')) {
       i = 0;
       while (i < blogDetail.length) {
         if ((blogDetail[i]['isMenorrhagia'] == 'false') &&
@@ -49,7 +51,7 @@ class RecomendedScreen extends StatelessWidget {
         }
         i = i + 1;
       }
-    } else if (bleedingIntensity == 'high') {
+    } else if (bleedingIntensity.contains('high')) {
       i = 0;
       while (i < blogDetail.length) {
         if ((blogDetail[i]['isMenorrhagia'] == 'true')) {
@@ -69,7 +71,7 @@ class RecomendedScreen extends StatelessWidget {
         i = i + 1;
       }
     }
-    if (pain == 'high') {
+    if (pain.contains('high') || pain.contains('High')) {
       i = 0;
       while (i < blogDetail.length) {
         if ((blogDetail[i]['disease'] == 'dysmenorrhea') ||
@@ -90,14 +92,36 @@ class RecomendedScreen extends StatelessWidget {
 
         i = i + 1;
       }
+    } else {
+      print(blogDetail[i]['description']);
+      final newBlog = Blog(
+        url: blogDetail[i]['url'],
+        imageUrl: blogDetail[i]['ImageUrl'],
+        youtubeUrl: blogDetail[i]['youtubeUrl'],
+        isAgeBelow: blogDetail[i]['isAgeBelow'],
+        disease: blogDetail[i]['disease'],
+        isMenorrhagia: blogDetail[i]['isMenorrhagia'],
+        title: blogDetail[i]['title'],
+        description: blogDetail[i]['description'],
+      );
+      bloglist.add(newBlog);
+
+      i = i + 1;
     }
+
     print(bloglist[0].title);
     return bloglist;
   }
 
+  static const BleedingIntensity = ["Heavy", "Normal", "Low"];
+  static const PainIntensity = ["High", "Moderate", "Low"];
+
   @override
   Widget build(BuildContext context) {
-    final bloglist = bleeding('low', 'high');
+    final listOfPeriods = Provider.of<PeriodProvider>(context)
+        .periodListProvideFromAlredyFetched();
+    final bloglist = bleeding(BleedingIntensity[listOfPeriods[0].bloodIndex],
+        PainIntensity[listOfPeriods[0].painIndex]);
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: Container(
