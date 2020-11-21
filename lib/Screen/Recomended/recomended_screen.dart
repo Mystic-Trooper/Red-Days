@@ -18,7 +18,7 @@ class RecomendedScreen extends StatelessWidget {
           final newBlog = Blog(
             url: blogDetail[i]['url'],
             imageUrl: blogDetail[i]['ImageUrl'],
-            youtubeUrl: blogDetail[i]['youtubeUrl'],
+            youtubeUrl: blogDetail[i]['YoutubeUrl'],
             isAgeBelow: blogDetail[i]['isAgeBelow'],
             disease: blogDetail[i]['disease'],
             isMenorrhagia: blogDetail[i]['isMenorrhagia'],
@@ -38,7 +38,7 @@ class RecomendedScreen extends StatelessWidget {
           final newBlog = Blog(
             url: blogDetail[i]['url'],
             imageUrl: blogDetail[i]['ImageUrl'],
-            youtubeUrl: blogDetail[i]['youtubeUrl'],
+            youtubeUrl: blogDetail[i]['YoutubeUrl'],
             isAgeBelow: blogDetail[i]['isAgeBelow'],
             disease: blogDetail[i]['disease'],
             isMenorrhagia: blogDetail[i]['isMenorrhagia'],
@@ -57,7 +57,7 @@ class RecomendedScreen extends StatelessWidget {
           final newBlog = Blog(
             url: blogDetail[i]['url'],
             imageUrl: blogDetail[i]['ImageUrl'],
-            youtubeUrl: blogDetail[i]['youtubeUrl'],
+            youtubeUrl: blogDetail[i]['YoutubeUrl'],
             isAgeBelow: blogDetail[i]['isAgeBelow'],
             disease: blogDetail[i]['disease'],
             isMenorrhagia: blogDetail[i]['isMenorrhagia'],
@@ -78,7 +78,7 @@ class RecomendedScreen extends StatelessWidget {
           final newBlog = Blog(
             url: blogDetail[i]['url'],
             imageUrl: blogDetail[i]['ImageUrl'],
-            youtubeUrl: blogDetail[i]['youtubeUrl'],
+            youtubeUrl: blogDetail[i]['YoutubeUrl'],
             isAgeBelow: blogDetail[i]['isAgeBelow'],
             disease: blogDetail[i]['disease'],
             isMenorrhagia: blogDetail[i]['isMenorrhagia'],
