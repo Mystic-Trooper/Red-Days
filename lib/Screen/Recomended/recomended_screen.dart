@@ -10,13 +10,12 @@ class RecomendedScreen extends StatelessWidget {
   List<Blog> bleeding(String bleedingIntensity, String pain) {
     var i = 0;
     List<Blog> bloglist = [];
-    print(blogDetail[i]['description']);
+
     if (bleedingIntensity == 'Normal') {
       i = 0;
       while (i < blogDetail.length) {
         if ((blogDetail[i]['isMenorrhagia'] == 'false') &&
             blogDetail[i]['disease'] == 'null') {
-          print(blogDetail[i]['description']);
           final newBlog = Blog(
             url: blogDetail[i]['url'],
             imageUrl: blogDetail[i]['ImageUrl'],
@@ -36,7 +35,6 @@ class RecomendedScreen extends StatelessWidget {
       while (i < blogDetail.length) {
         if ((blogDetail[i]['isMenorrhagia'] == 'false') &&
             blogDetail[i]['disease'] == 'hypomenorrhea') {
-          print(blogDetail[i]['description']);
           final newBlog = Blog(
             url: blogDetail[i]['url'],
             imageUrl: blogDetail[i]['ImageUrl'],
@@ -55,7 +53,6 @@ class RecomendedScreen extends StatelessWidget {
       i = 0;
       while (i < blogDetail.length) {
         if ((blogDetail[i]['isMenorrhagia'] == 'true')) {
-          print(blogDetail[i]['description']);
           final newBlog = Blog(
             url: blogDetail[i]['url'],
             imageUrl: blogDetail[i]['ImageUrl'],
@@ -76,7 +73,6 @@ class RecomendedScreen extends StatelessWidget {
       while (i < blogDetail.length) {
         if ((blogDetail[i]['disease'] == 'dysmenorrhea') ||
             (blogDetail[i]['disease'] == 'Anemia')) {
-          print(blogDetail[i]['description']);
           final newBlog = Blog(
             url: blogDetail[i]['url'],
             imageUrl: blogDetail[i]['ImageUrl'],
@@ -93,7 +89,7 @@ class RecomendedScreen extends StatelessWidget {
         i = i + 1;
       }
     } else {
-      print(blogDetail[i]['description']);
+      print("else case running");
       i = 0;
       while (i < blogDetail.length) {
         final newBlog = Blog(
@@ -112,19 +108,25 @@ class RecomendedScreen extends StatelessWidget {
       }
     }
 
-    print(bloglist[0].title);
     return bloglist;
   }
 
-  static const BleedingIntensity = ["Heavy", "Normal", "Low"];
-  static const PainIntensity = ["High", "Moderate", "Low"];
+  static const BleedingIntensity = ["Heavy", "Normal", "Low", "abc"];
+  static const PainIntensity = ["High", "Moderate", "Low", "abc"];
 
   @override
   Widget build(BuildContext context) {
     final listOfPeriods = Provider.of<PeriodProvider>(context)
         .periodListProvideFromAlredyFetched();
-    final bloglist = bleeding(BleedingIntensity[listOfPeriods[0].bloodIndex],
-        PainIntensity[listOfPeriods[0].painIndex]);
+    List<Blog> bloglist = [];
+    if (listOfPeriods != null) {
+      bloglist = bleeding(
+          BleedingIntensity[
+              listOfPeriods == null ? listOfPeriods[0].bloodIndex : 3],
+          PainIntensity[
+              listOfPeriods == null ? listOfPeriods[0].painIndex : 3]);
+    }
+
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: Container(
@@ -202,35 +204,34 @@ class RecomendedScreen extends StatelessWidget {
                               children: [
                                 IconButton(
                                   onPressed: () async {
-                                          String url =
-                                              bloglist[index].youtubeUrl;
-                                          try {
-                                            if (await canLaunch(url)) {
-                                              await launch(url);
-                                            } else {
-                                              throw 'Could not launch $url';
-                                            }
-                                          } catch (error) {
-                                            print(error);
-                                          }
-                                        },
-                                        icon: Icon(
-                                          FlutterIcons.youtube_ant,
-                                        ),
-                                      ),
-                                      SizedBox(width: 12),
-                                    ],
+                                    String url = bloglist[index].youtubeUrl;
+                                    try {
+                                      if (await canLaunch(url)) {
+                                        await launch(url);
+                                      } else {
+                                        throw 'Could not launch $url';
+                                      }
+                                    } catch (error) {
+                                      print(error);
+                                    }
+                                  },
+                                  icon: Icon(
+                                    FlutterIcons.youtube_ant,
                                   ),
-                                ],
-                              ),
-                            )
+                                ),
+                                SizedBox(width: 12),
+                              ],
+                            ),
                           ],
                         ),
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                  ],
+                      )
+                    ],
+                  ),
                 ),
+              ),
+              SizedBox(height: 10),
+            ],
+          ),
         ),
       ),
     );
