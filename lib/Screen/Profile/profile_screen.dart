@@ -4,6 +4,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:womenism/Constant/colors.dart';
+import 'package:womenism/provider/period_provider.dart';
 import 'package:womenism/provider/profile_provider.dart';
 import '../../Widgets/p_s_widget/emergency_doc_card.dart';
 import '../../Widgets/p_s_widget/modify_entries.dart';
@@ -42,7 +43,23 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(height: 0.04.sw),
             EmergencyDocCard()
           ],
+          backgroundColor: appBarColor,
         ),
+        body: snapshot?.data == null
+            ? Center(child: CircularProgressIndicator())
+            : SingleChildScrollView(
+                child: Column(
+                  children: [
+                    PSPicNameListTile(snapshot.data),
+                    SizedBox(height: 10),
+                    PSEmailPhoneCard(snapshot.data),
+                    SizedBox(height: 20),
+                    ModifyEntries(),
+                    SizedBox(height: 20),
+                    EmergencyDocCard()
+                  ],
+                ),
+              ),
       ),
     );
   }

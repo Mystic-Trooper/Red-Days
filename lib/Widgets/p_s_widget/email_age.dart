@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:womenism/model/profile.dart';
 
 class PSEmailPhoneCard extends StatelessWidget {
+  final Profile profileDetails;
+
+  const PSEmailPhoneCard(this.profileDetails);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +25,7 @@ class PSEmailPhoneCard extends StatelessWidget {
                   SizedBox(
                     width: 0.025.sw,
                   ),
-                  Text("aishwarya324@gmail.com")
+                  Text(profileDetails?.email ?? "Email")
                 ],
               ),
               SizedBox(
@@ -33,7 +37,8 @@ class PSEmailPhoneCard extends StatelessWidget {
                   SizedBox(
                     width: 0.025.sw,
                   ),
-                  Text("32 Yrs old"),
+                  Text(
+                      "${(DateTime.now()).difference(profileDetails?.dob ?? DateTime.now()).inDays.toString()} Days Old"),
                 ],
               ),
             ],

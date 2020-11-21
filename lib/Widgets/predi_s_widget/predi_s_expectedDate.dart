@@ -13,7 +13,7 @@ class ExpectedDate extends StatelessWidget {
               color: Colors.amber.withOpacity(0.6),
               borderRadius: BorderRadius.circular(20),
             ),
-            height: 400.h,
+            height: 0.21.sh,
             alignment: Alignment.center,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -62,7 +62,7 @@ class ExpectedDate extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: 5,
+          width: 0.01.sw,
         ),
         Expanded(
           child: Container(
@@ -70,7 +70,7 @@ class ExpectedDate extends StatelessWidget {
               color: Colors.amber.withOpacity(0.6),
               borderRadius: BorderRadius.circular(20),
             ),
-            height: 400.h,
+            height: 0.21.sh,
             alignment: Alignment.center,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

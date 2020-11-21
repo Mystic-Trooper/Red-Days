@@ -109,7 +109,7 @@ class AddPeriodScreen extends StatelessWidget {
                     currentValueTTo = DateTime.now();
                     final date = await showDatePicker(
                       context: context,
-                      firstDate: DateTime.now(),
+                      firstDate: DateTime(2000),
                       initialDate: currentValueTTo ?? DateTime.now(),
                       lastDate: DateTime(2025),
                     );

@@ -12,5 +12,6 @@ void sosDoc(BuildContext ctx) async {
   String address =
       //'sms:9410234020'; //add doctor number in place of contact added
       'sms:${doctorDetails.phone}';
-  sender.sendSms(new SmsMessage(address, 'HELP'));
+  sender.sendSms(new SmsMessage(address,
+      'EMERGENCY ALERT..! Urgently need medical help, Please come to my location or arrange an ambulance asap..!'));
 }
