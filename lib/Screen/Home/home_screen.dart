@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      //backgroundColor: Theme.of(context).backgroundColor,
       body: selectedPageIndex == 2
           ? ProfileScreen()
           : selectedPageIndex == 0
@@ -30,17 +30,26 @@ class _HomeScreenState extends State<HomeScreen> {
             selectedPageIndex = index;
           });
         },
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.date_range),
+            icon: Icon(
+              Icons.date_range,
+              color: Colors.red[400],
+            ),
             label: 'Prediction',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.recommend),
+            icon: Icon(
+              Icons.recommend,
+              color: Colors.red[400],
+            ),
             label: 'Recommendations',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_sharp),
+            icon: Icon(
+              Icons.account_circle_sharp,
+              color: Colors.red[400],
+            ),
             label: 'Profile',
           ),
         ],
