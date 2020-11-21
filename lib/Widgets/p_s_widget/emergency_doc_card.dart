@@ -26,7 +26,11 @@ class EmergencyDocCard extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: RadialGradient(
           radius: 5,
-          colors: [Colors.yellow, Colors.purple, Colors.red],
+          colors: [
+            Colors.red[50],
+            Colors.red[400],
+            Colors.red[900],
+          ],
         ),
         borderRadius: BorderRadius.circular(20),
       ),

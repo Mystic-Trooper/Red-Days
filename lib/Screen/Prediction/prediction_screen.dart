@@ -90,9 +90,10 @@ class PredictionScreen extends StatelessWidget {
                             SizedBox(height: 0.03.sh),
                             //('condition')? Widget1(...): Widget2(...)
                             Text(
-                              (false)
+                              /*(false)
                                   ? 'No need to\t \n Consult a\t \n Doctor\t'
-                                  : 'Advised to\t \n Consult\t \n a Doctor\t',
+                                  : 'Advised to\t \n Consult\t \n a Doctor\t'*/
+                              '\nFor Professional\t \n Medical Advise..\t',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.blue[600],
