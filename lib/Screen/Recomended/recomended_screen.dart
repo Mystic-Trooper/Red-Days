@@ -94,19 +94,22 @@ class RecomendedScreen extends StatelessWidget {
       }
     } else {
       print(blogDetail[i]['description']);
-      final newBlog = Blog(
-        url: blogDetail[i]['url'],
-        imageUrl: blogDetail[i]['ImageUrl'],
-        youtubeUrl: blogDetail[i]['youtubeUrl'],
-        isAgeBelow: blogDetail[i]['isAgeBelow'],
-        disease: blogDetail[i]['disease'],
-        isMenorrhagia: blogDetail[i]['isMenorrhagia'],
-        title: blogDetail[i]['title'],
-        description: blogDetail[i]['description'],
-      );
-      bloglist.add(newBlog);
+      i = 0;
+      while (i < blogDetail.length) {
+        final newBlog = Blog(
+          url: blogDetail[i]['url'],
+          imageUrl: blogDetail[i]['ImageUrl'],
+          youtubeUrl: blogDetail[i]['YoutubeUrl'],
+          isAgeBelow: blogDetail[i]['isAgeBelow'],
+          disease: blogDetail[i]['disease'],
+          isMenorrhagia: blogDetail[i]['isMenorrhagia'],
+          title: blogDetail[i]['title'],
+          description: blogDetail[i]['description'],
+        );
+        bloglist.add(newBlog);
 
-      i = i + 1;
+        i = i + 1;
+      }
     }
 
     print(bloglist[0].title);
@@ -199,34 +202,35 @@ class RecomendedScreen extends StatelessWidget {
                               children: [
                                 IconButton(
                                   onPressed: () async {
-                                    String url = bloglist[index].youtubeUrl;
-                                    try {
-                                      if (await canLaunch(url)) {
-                                        await launch(url);
-                                      } else {
-                                        throw 'Could not launch $url';
-                                      }
-                                    } catch (error) {
-                                      print(error);
-                                    }
-                                  },
-                                  icon: Icon(
-                                    FlutterIcons.youtube_ant,
+                                          String url =
+                                              bloglist[index].youtubeUrl;
+                                          try {
+                                            if (await canLaunch(url)) {
+                                              await launch(url);
+                                            } else {
+                                              throw 'Could not launch $url';
+                                            }
+                                          } catch (error) {
+                                            print(error);
+                                          }
+                                        },
+                                        icon: Icon(
+                                          FlutterIcons.youtube_ant,
+                                        ),
+                                      ),
+                                      SizedBox(width: 12),
+                                    ],
                                   ),
-                                ),
-                                SizedBox(width: 12),
-                              ],
-                            ),
+                                ],
+                              ),
+                            )
                           ],
                         ),
-                      )
-                    ],
-                  ),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                  ],
                 ),
-              ),
-              SizedBox(height: 10),
-            ],
-          ),
         ),
       ),
     );
