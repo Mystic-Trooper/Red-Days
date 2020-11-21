@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 import 'package:womenism/provider/period_provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../Constant/blogDetail.dart';
 import '../../model/blog.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -149,9 +150,6 @@ class RecomendedScreen extends StatelessWidget {
                   }
                 },
                 child: Container(
-                  padding: EdgeInsets.only(
-                    top: 20,
-                  ),
                   decoration: BoxDecoration(
                     //color: Colors.amber,
                     border: Border.all(color: Colors.grey),
@@ -161,26 +159,41 @@ class RecomendedScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Center(
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(30.0),
+                        child: Container(
+                          //padding:EdgeInsets.symmetric(vertical: 7, horizontal: 7),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Image.network(
+                              bloglist[index].imageUrl ??
+                                  'https://i.pinimg.com/736x/56/58/eb/5658ebd81676b99acd753488dcadd054.jpg',
+                              height: 0.3.sh,
+                              width: double.infinity,
+                              alignment: Alignment.center,
+                            ),
+                          ),
+                        ),
+                      ),
+                      /*Center(
                         child: Image.network(
                           bloglist[index].imageUrl ??
                               'https://i.pinimg.com/736x/56/58/eb/5658ebd81676b99acd753488dcadd054.jpg',
                           height: 100,
                         ),
-                      ),
-                      SizedBox(height: 7),
+                      ),*/
+                      //SizedBox(height: 7),
                       Container(
                         padding:
                             EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(colors: [
-                            Colors.blue[400],
-                            Colors.red,
-                          ]),
+                          color: Colors.red[400].withOpacity(0.5),
                           // border: Border.all(color: Colors.grey),
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               bloglist[index].title,
@@ -203,6 +216,7 @@ class RecomendedScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 IconButton(
+                                  color: Colors.red[800],
                                   onPressed: () async {
                                     String url = bloglist[index].youtubeUrl;
                                     try {
