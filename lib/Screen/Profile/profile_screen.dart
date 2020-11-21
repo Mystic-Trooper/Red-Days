@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 import 'package:womenism/Constant/colors.dart';
-import 'package:womenism/provider/period_provider.dart';
 import 'package:womenism/provider/profile_provider.dart';
 import '../../Widgets/p_s_widget/emergency_doc_card.dart';
 import '../../Widgets/p_s_widget/modify_entries.dart';
