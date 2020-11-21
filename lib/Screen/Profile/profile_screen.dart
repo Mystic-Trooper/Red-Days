@@ -20,12 +20,6 @@ class ProfileScreen extends StatelessWidget {
           elevation: 0,
           actions: [
             IconButton(
-                icon: Icon(Icons.accessibility_sharp),
-                onPressed: () {
-                  Provider.of<PeriodProvider>(context, listen: false)
-                      .getPeriodList();
-                }),
-            IconButton(
                 icon: Icon(FlutterIcons.sign_out_alt_faw5s),
                 onPressed: () {
                   FirebaseAuth.instance.signOut();
