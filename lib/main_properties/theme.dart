@@ -16,4 +16,10 @@ ThemeData theme = ThemeData(
       borderRadius: BorderRadius.circular(30),
     ),
   ),
+  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    backgroundColor: Colors.pink[50],
+    unselectedLabelStyle: TextStyle(
+      color: Colors.redAccent,
+    ),
+  ),
 );

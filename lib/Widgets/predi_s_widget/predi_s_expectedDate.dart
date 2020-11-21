@@ -10,7 +10,14 @@ class ExpectedDate extends StatelessWidget {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.amber.withOpacity(0.6),
+              gradient: RadialGradient(
+                radius: 5,
+                colors: [
+                  Colors.red[100],
+                  Colors.red[600],
+                  Colors.red[900],
+                ],
+              ),
               borderRadius: BorderRadius.circular(20),
             ),
             height: 0.21.sh,
@@ -22,7 +29,7 @@ class ExpectedDate extends StatelessWidget {
                   'Ovulation Starts',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.blue[800],
+                    color: Colors.white,
                     fontWeight: FontWeight.w300,
                     fontSize: 18,
                   ),
@@ -32,8 +39,8 @@ class ExpectedDate extends StatelessWidget {
                   //yr
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                     fontSize: 25,
                   ),
                 ),
@@ -42,8 +49,8 @@ class ExpectedDate extends StatelessWidget {
                   //date
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                     fontSize: 25,
                   ),
                 ),
@@ -52,8 +59,8 @@ class ExpectedDate extends StatelessWidget {
                   //day
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                     fontSize: 25,
                   ),
                 ),
@@ -67,7 +74,14 @@ class ExpectedDate extends StatelessWidget {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.amber.withOpacity(0.6),
+              gradient: RadialGradient(
+                radius: 5,
+                colors: [
+                  Colors.red[100],
+                  Colors.red[600],
+                  Colors.red[900],
+                ],
+              ),
               borderRadius: BorderRadius.circular(20),
             ),
             height: 0.21.sh,
@@ -79,7 +93,7 @@ class ExpectedDate extends StatelessWidget {
                   'Alert Date',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.blue[800],
+                    color: Colors.white,
                     fontWeight: FontWeight.w300,
                     fontSize: 18,
                   ),
@@ -89,8 +103,8 @@ class ExpectedDate extends StatelessWidget {
                   //yr
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                     fontSize: 25,
                   ),
                 ),
@@ -99,8 +113,8 @@ class ExpectedDate extends StatelessWidget {
                   //date
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                     fontSize: 25,
                   ),
                 ),
@@ -109,8 +123,8 @@ class ExpectedDate extends StatelessWidget {
                   //day
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.blue[800],
-                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                     fontSize: 25,
                   ),
                 ),
