@@ -131,8 +131,17 @@ class RecomendedScreen extends StatelessWidget {
           itemBuilder: (context, index) => Column(
             children: [
               InkWell(
-                onTap: () {
-                  print("Blog tapped $index");
+                onTap: () async {
+                  String url = bloglist[index].url;
+                  try {
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  } catch (error) {
+                    print(error);
+                  }
                 },
                 child: Container(
                   padding: EdgeInsets.only(
