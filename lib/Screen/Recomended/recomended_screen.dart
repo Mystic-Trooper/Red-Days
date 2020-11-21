@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import '../../Constant/blogDetail.dart';
 import '../../model/blog.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class RecomendedScreen extends StatelessWidget {
   List<Blog> bleeding(String bleedingIntensity, String pain) {
@@ -17,7 +18,7 @@ class RecomendedScreen extends StatelessWidget {
           final newBlog = Blog(
             url: blogDetail[i]['url'],
             imageUrl: blogDetail[i]['ImageUrl'],
-            youtubeUrl: blogDetail[i]['youtubeUrl'],
+            youtubeUrl: blogDetail[i]['YoutubeUrl'],
             isAgeBelow: blogDetail[i]['isAgeBelow'],
             disease: blogDetail[i]['disease'],
             isMenorrhagia: blogDetail[i]['isMenorrhagia'],
@@ -37,7 +38,7 @@ class RecomendedScreen extends StatelessWidget {
           final newBlog = Blog(
             url: blogDetail[i]['url'],
             imageUrl: blogDetail[i]['ImageUrl'],
-            youtubeUrl: blogDetail[i]['youtubeUrl'],
+            youtubeUrl: blogDetail[i]['YoutubeUrl'],
             isAgeBelow: blogDetail[i]['isAgeBelow'],
             disease: blogDetail[i]['disease'],
             isMenorrhagia: blogDetail[i]['isMenorrhagia'],
@@ -56,7 +57,7 @@ class RecomendedScreen extends StatelessWidget {
           final newBlog = Blog(
             url: blogDetail[i]['url'],
             imageUrl: blogDetail[i]['ImageUrl'],
-            youtubeUrl: blogDetail[i]['youtubeUrl'],
+            youtubeUrl: blogDetail[i]['YoutubeUrl'],
             isAgeBelow: blogDetail[i]['isAgeBelow'],
             disease: blogDetail[i]['disease'],
             isMenorrhagia: blogDetail[i]['isMenorrhagia'],
@@ -77,7 +78,7 @@ class RecomendedScreen extends StatelessWidget {
           final newBlog = Blog(
             url: blogDetail[i]['url'],
             imageUrl: blogDetail[i]['ImageUrl'],
-            youtubeUrl: blogDetail[i]['youtubeUrl'],
+            youtubeUrl: blogDetail[i]['YoutubeUrl'],
             isAgeBelow: blogDetail[i]['isAgeBelow'],
             disease: blogDetail[i]['disease'],
             isMenorrhagia: blogDetail[i]['isMenorrhagia'],
@@ -164,7 +165,18 @@ class RecomendedScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 IconButton(
-                                  onPressed: () {},
+                                  onPressed: () async {
+                                    String url = bloglist[index].youtubeUrl;
+                                    try {
+                                      if (await canLaunch(url)) {
+                                        await launch(url);
+                                      } else {
+                                        throw 'Could not launch $url';
+                                      }
+                                    } catch (error) {
+                                      print(error);
+                                    }
+                                  },
                                   icon: Icon(
                                     FlutterIcons.youtube_ant,
                                   ),

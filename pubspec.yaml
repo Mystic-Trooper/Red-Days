@@ -33,7 +33,7 @@ dependencies:
   cloud_firestore: ^0.14.3
   firebase_core: ^0.5.2
   sms: ^0.2.0
-
+  url_launcher: any
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
