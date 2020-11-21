@@ -16,7 +16,7 @@ class PSPicNameListTile extends StatelessWidget {
           tag: "ProfileHeroKey",
           child: ClipOval(
               child: SvgPicture.asset(
-            "assets/images/profile.svg",
+            "assets/images/4.svg",
           )),
         ),
       ),
