@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:womenism/Constant/colors.dart';
+import '../../provider/custom_url_launcher.dart';
+import 'package:womenism/provider/custom_url_launcher.dart';
 import 'package:womenism/model/doctor.dart';
 import '../../Constant/doctorDetails.dart';
 
@@ -32,6 +34,16 @@ class DoctorListScreen extends StatelessWidget {
           itemBuilder: (context, index) => Column(
             children: [
               ListTile(
+                trailing: IconButton(
+                  icon: Icon(
+                    Icons.call,
+                    color: Colors.green[400],
+                  ),
+                  onPressed: () {
+                    String contact = 'tel: +8630292417';
+                    customLaunch(contact);
+                  },
+                ),
                 leading: CircleAvatar(
                   child: ClipOval(
                       child: SvgPicture.asset(
